@@ -24,6 +24,7 @@ namespace UnityDemo
 				new ParameterOverride("radioName", "BrokenRadio"));
 			radio.Start();
 
+			Console.WriteLine("Press any key to exit.");
 			Console.ReadKey();
 		}
 	}
