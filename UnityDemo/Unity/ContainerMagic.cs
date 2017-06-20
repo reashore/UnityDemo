@@ -17,6 +17,9 @@ namespace UnityDemo.Unity
 			Type batteryType = typeof(IBattery);
 			Type tunerType = typeof(ITuner);
 			container.RegisterType<IRadio, Radio>(new InjectionConstructor(batteryType, tunerType, typeof(string)));
+
+			container.RegisterType<ISpeaker, CheapSpeaker>("Cheap");
+			container.RegisterType<ISpeaker, PriceySpeaker>("Expensive");
 		}
 	}
 }

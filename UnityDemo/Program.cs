@@ -19,10 +19,17 @@ namespace UnityDemo
 			Console.WriteLine(dial.DialType());
 
 			ITuner tuner = container.Resolve<ITuner>();
-			IRadio radio = container.Resolve<IRadio>(new ParameterOverride("radioBattery", battery),
+			IRadio radio = container.Resolve<IRadio>(
+				new ParameterOverride("radioBattery", battery),
 				new ParameterOverride("radioTuner", tuner),
 				new ParameterOverride("radioName", "BrokenRadio"));
+
 			radio.Start();
+
+			ISpeaker cheapSpeaker = container.Resolve<ISpeaker>("Cheap");
+			ISpeaker priceySpeaker = container.Resolve<ISpeaker>("Expensive");
+			cheapSpeaker.Start();
+			priceySpeaker.Start();
 
 			Console.WriteLine("Press any key to exit.");
 			Console.ReadKey();
