@@ -3,6 +3,8 @@ using Microsoft.Practices.Unity;
 using UnityDemo.Domain;
 using UnityDemo.Unity;
 
+// http://ikeptwalking.com/microsoft-unity-tutorial/
+
 namespace UnityDemo
 {
 	public class Demo
